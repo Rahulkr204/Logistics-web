@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+<!-- {% load i18n %} -->
+<style>
+.log-out{
+	min-height: 600px;
+}
+</style>
+{% block logoutcontent %}
+<div class="log-out">
+	<p class='text-align-center lead'>You have successfully logged out.</p>
+	<p class='text-align-center lead'><a href="{% url 'auth_login' %}">Login</a></p>
+</div>
+{% endblock %}
+

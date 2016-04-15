@@ -1,0 +1,40 @@
+{% load staticfiles %}
+{% include 'head_css.html' %}
+<style type="text/css">
+  nav{
+    background-color: #8197C2;
+    
+  }
+  .brand-logo{
+    margin: 8px;  
+  }
+
+</style>
+<div class="navbar-fixed">
+  <nav>
+      <div class="nav-wrapper ">
+        <a href="{% url 'home' %}" class="brand-logo"><img src="{% static 'img/logo_nav.png' %}" style="height: 45px;width: 111px"></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'faq' %}">FAQ</a></li>
+            {% if request.user.is_authenticated %}
+              <li><a href="{% url 'auth_logout' %}">Logout</a></li>
+              <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+              {% else  %}
+              <li><a href="{% url 'auth_login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+         <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'faq' %}">FAQ</a></li>
+            {% if request.user.is_authenticated %}
+              <li><a href="{% url 'auth_logout' %}">Logout</a></li>
+              <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+              {% else  %}
+              <li><a href="{% url 'auth_login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+      </div>
+    </nav>
+</div>

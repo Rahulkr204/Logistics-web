@@ -1,0 +1,20 @@
+[
+	{
+		"order_id":1,
+		"goods_type":"cotton",
+		"order_status":"pending",
+		"quantity":100,
+		"source":"Hyderabad",
+		"destination":"Secunderabad",
+		"contact_num":{"contact_num":9393,"email_id":"xyz","name":"xyz","password":"hello"}
+	},
+	{
+		"order_id":2,
+		"goods_type":"silk",
+		"order_status":"pending",
+		"quantity":100,
+		"source":"Gandhinagar",
+		"destination":"Ahmedabad",
+		"contact_num":{"contact_num":8128,"email_id":"hello","name":"yo","password":"hey"}
+	}
+]

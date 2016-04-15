@@ -1,0 +1,160 @@
+
+nav{
+	background-color: #FB3030;
+}
+hr{
+	border:1px solid #939393;
+}
+.row{
+	margin-bottom: 0!important;
+}
+.jumbotron{
+	background-color: #FFFFFF;
+	color: #9E9E9E;
+	min-height: 600px;
+	margin:0;
+	padding: 0;
+}
+.navbar-static-top {
+	margin-bottom: 0px !important;
+}
+.banner-content{
+	text-align: justify;
+	background-image: url("https://images.unsplash.com/reserve/9JMZhTL8T7ulzIoD2E78_2010_02280041.JPG?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=76201d70a5d6a29b63e737820f71816e");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+    width: 100%;
+    height: 600px;
+}
+.banner-content p{
+	color: #757575;
+}
+#name{
+	font-size: 5em;
+	float: right;
+	margin-right: 20px;
+	margin-top: 20px;
+	color: #FFFFFF;
+	font-family: 'Roboto', sans-serif;
+}
+.play{
+	position: relative;
+	text-align: right;
+	font-size: 1.6em;
+	margin-top: 50px;
+	margin-right: 160px;
+	float: right;
+	color: #FFFFFF;
+	width: 100%;
+}
+.play span{
+	/*margin-left: 10%;*/
+}
+.slider{
+	min-height: 600px;
+}
+.slides{
+	min-height: 600px;
+}
+.headline{
+	/*padding: 10px;*/
+	text-align: center;
+}
+.headline ul{
+	margin-top: 25%;
+}
+.headline ul li{
+	list-style-type: circle;
+	font-size: 1.2em;
+	padding: 10px 0;
+	margin-top: 10px;
+}
+.headline span{
+	text-align: center;
+	font-size: 2em;
+	margin: 5px;
+	/*text-decoration: underline ;*/
+}
+.about-section img {
+  /*display: block;*/
+  width: 100%;
+  max-width:220px;
+  max-height:300px;
+}
+
+.footer-copyright{
+  background-color: #BFBFBF;
+}
+.page-footer{
+  background-color: #6A6A6A;
+}
+h1 span{
+	background-color: #fff;
+	color: #9E9E9E;
+	font-size: 2em;
+}
+.customers-section{
+	text-align: center;
+}
+
+.about-section{
+	font-size: 1.2em;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	background-color: #d8dfe6
+
+}
+.about-section p{
+	text-align: justify;
+}
+.about-section-img{
+	text-align: center;
+	padding: 5px;
+	font-size: 1.2em;
+	font-family: 'Roboto', sans-serif;
+}
+.hto-section{
+	text-align: center;
+	/*min-height: 40	0px;*/
+	background-color: #f3f5f5;	
+}
+.hto-section li{
+	text-align: justify;
+	padding: 10px;
+}
+.headline ul{
+	margin: 50px 60px;
+}
+.nexus5 .screen{
+	background: #fff;
+}
+.marvel-device.nexus5{
+	height: 450px !important;
+	width: 265px !important;
+}
+#toTop{
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	bottom:0; 
+	right:20px;
+	background-color: #A3A3A3;
+	font-size: 3em;
+	text-align: center;
+}
+.w3-content{
+	width: 100%;
+	height: 450px;
+}
+.customers-section{
+	background-color: #D8DFE6;
+}
+.customers-section-content{
+	margin-bottom: 20px;
+}
+/*.row .col.s12{
+	margin-top: 20px;
+}*/
+.active{
+	background-color: #CFCFCF
+}

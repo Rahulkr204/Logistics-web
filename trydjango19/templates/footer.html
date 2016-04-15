@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<style>
+  
+  footer.page-footer{
+  margin-top: 0px;
+  bottom: 0;
+  background-color: #8197C2;
+}
+footer{
+
+}
+</style>
+          <footer class="page-footer">
+            <div class="container">
+              <div class="row">                
+                <div class="col l6 s12">
+                  <h5 class="white-text">Contact Us</h5>
+                  <p class="white-text">Have other question regarding our services ? We are ready to answer your questions, just shoot us on below contact details.</p>
+                  <ul>
+                    <li><a class="grey-text text-lighten-3" href="">Phone : 9426898134</a></li>
+                    <li><a class="grey-text text-lighten-3" href="">Email : jatinpatel845@gmail.com</a></li>
+                    <li><a class="grey-text text-lighten-3" href="">Address : 157,Sahjanand Complex<br>Opp. Sanjivani Hospital,Bayad-383325</a></li>
+                  </ul>
+                </div>
+                <div class="col l6 s12">
+                  <img src="{% static 'img/map.png' %}">
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+              © 2016 Copyright Arbuda Transport Agency
+              </div>
+            </div>
+          </footer>
+          <script type="text/javascript">
+            $(document).ready(function(){
+              $('.collapsible').collapsible({
+                accordion : true // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+              });
+            });
+          </script>

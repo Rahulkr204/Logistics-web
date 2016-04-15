@@ -1,0 +1,95 @@
+{% load staticfiles %}
+{% include 'head_css.html' %}
+
+<!-- navbar start -->
+<!-- dashboard -->
+<div class="dash-board" ng-app="orders-list" ng-controller="orderCtrl">
+	<div class="row">
+		<div class="col s2 dash-board-3">
+			<ul class="side-nav fixed">
+				<li class="brand-logo" style="padding: 15px">
+					<div style="width: 200px;height: 200px;border-radius: 100px;background-color: #8197C2;">
+						<img src={% static 'img/logo.png' %} style="margin-top: 50px;margin-left:10px;width: 180px">
+						<h5 class="white-text" style="margin-left: 60px">Arbuda</h5>
+					</div>
+				</li>
+
+			      	{% if request.user.is_authenticated %}
+			      		<li><a href="{% url 'home' %}">Home</a></li>
+			      		<!-- <li class="active"><a href="{% url 'dashboard' %}">Dashboard</a></li> -->
+		              <li><a href="{% url 'home' %}">Logout</a></li>
+		              {% else  %}
+		              <li><a href="{% url 'auth_login' %}">Login</a></li>
+		            {% endif %}
+		            <hr>
+				<li class="orders active"><a href="{% url 'orders' %}" class=class="waves-effect waves-teal btn-flat">Orders</a></li>
+				<li class="trips"><a href="{% url 'triplist' %}" class=class="waves-effect waves-teal btn-flat">Trips</a></li>
+				<li class="trucks"><a href="{% url 'trucks' %}" class=class="waves-effect waves-teal btn-flat">Trucks</a></li>
+				<li class="drivers"><a href="{% url 'drivers' %}" class=class="waves-effect waves-teal btn-flat">Drivers</a></li>
+				<li class="faq"><a href="{% url 'faq' %}" class=class="waves-effect waves-teal btn-flat">FAQ</a></li>
+			</ul>
+		</div>
+		<div class="col s10  dash-board-9" >
+			<div class="row top-head">
+				<div class="input-field col s6">
+		          <input id="search" type="text" class="validate" placeholder="Search orders ..." ng-model="query">
+		          <label for="search"></label>
+		        </div>
+		        <div class="col s6 sort">
+		        	<span>Filter By :</span>
+							<span><a class="waves-effect waves-teal btn" ng-click="myFilter = {order_status:'delivered,pending,intransit' }" >All</a></span>
+		        	<span><a class="waves-effect waves-teal btn" ng-click="myFilter = {order_status: 'delivered'}" >Completed</a></span>
+		        	<span><a class="waves-effect waves-teal btn" ng-click="myFilter = {order_status: 'pending'}">Pending</a></span>
+		        	<span><a class="waves-effect waves-teal btn" ng-click="myFilter = {order_status: 'intransit'}">In transit</a></span>
+		        </div>
+			</div>
+			<!-- orders card -->
+			<div class="row">
+				<ul>
+					<li ng-repeat="order in orders | filter:query | filter:myFilter">
+					<!-- single order -->
+			        <div class="col s12 card-1">
+			          <div class="card">
+			            <div class="card-content white-text">
+			              <span class="card-title">{$ order.name  $}</span>
+			              <div class="row">
+			              	<div class="col s12 m6 l6">
+			              		<ul>
+					              	<li><strong>Source</strong> : {$ order.source $}</li>
+					              	<li><strong>Goods Type</strong> : {$ order.goods_type $}</li>
+					              	<li><strong>Order ID</strong> : {$ order.order_id $}</li>
+					            </ul>
+			              	</div>
+			              	<div class="col s12 m6 l6">
+			              		<ul>
+					              	<li><strong>Destinations</strong> : {$ order.destination $}</li>
+					              	<li><strong>Weight(in Kgs)</strong> :{$ order.quantity $}</li>
+					              	<li><strong>Contact Info</strong> : {$ order.contact_num $}</li>
+					              	<!-- <li>Contact Info : {$ order.order_status $}</li> -->
+					              </ul>
+			              	</div>
+			              	<div class="col s12 m6 l6">
+			              		<strong>Additional Info</strong>  : {$ order.additional_info $}
+			              	</div>
+			              </div>
+			            </div>
+			            <div class="card-action">
+			              <a href="" class="waves-effect waves-light btn" ng-model="cancel_order[$index]" ng-click="canc($index)"><i class="material-icons left">thumb_down</i>Cancel</a>
+			              <a href="" class="waves-effect waves-light btn" ng-model="confirm_order[$index]" ng-click="func($index)"><i class="material-icons left">thumb_up</i>Confirm</a>
+			              <a href="" class="waves-effect waves-light" style="color: #fff;"><i class="material-icons left" >store</i>{$ order.order_status $}</a>
+			            </div>
+			          </div>
+			        </div>
+		        <!-- single order end -->
+
+					</li>
+				</ul>
+		    </div>		    
+		</div>
+
+	</div>
+</div>
+<!-- dashboard ends -->
+
+{% include 'javascript.html' %}
+

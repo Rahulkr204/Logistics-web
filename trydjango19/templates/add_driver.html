@@ -1,0 +1,65 @@
+{% load staticfiles %}
+{% include 'head_css.html' %}
+<style>
+	
+</style>
+
+<!-- dashboard -->
+<div class="dash-board" ng-app="add-driver" ng-controller="submitCtrl">
+	<div class="row">
+		<div class="col s2 dash-board-3">
+			<ul class="side-nav fixed">
+				<li class="brand-logo" style="padding: 15px">
+					<div style="width: 200px;height: 200px;border-radius: 100px;background-color: #8197C2;">
+						<img src={% static 'img/logo.png' %} style="margin-top: 50px;margin-left:10px;width: 180px">
+						<h5 class="white-text" style="margin-left: 60px">Arbuda</h5>
+					</div>
+				</li>
+
+			      	{% if request.user.is_authenticated %}
+			      		<li><a href="{% url 'home' %}">Home</a></li>
+			      		<!-- <li class="active"><a href="{% url 'dashboard' %}">Dashboard</a></li> -->
+		              <li><a href="{% url 'auth_logout' %}">Logout</a></li>
+		              {% else  %}
+		              <li><a href="{% url 'auth_login' %}">Login</a></li>
+		            {% endif %}
+		            <hr>
+				<li class="orders"><a href="{% url 'orders' %}" class=class="waves-effect waves-teal btn-flat">Orders</a></li>
+				<li class="trips"><a href="{% url 'triplist' %}" class=class="waves-effect waves-teal btn-flat">Trips</a></li>
+				<li class="trucks"><a href="{% url 'trucks' %}" class=class="waves-effect waves-teal btn-flat">Trucks</a></li>
+				<li class="drivers active"><a href="{% url 'drivers' %}" class=class="waves-effect waves-teal btn-flat">Drivers</a></li>
+				<li class="faq"><a href="{% url 'faq' %}" class=class="waves-effect waves-teal btn-flat">FAQ</a></li>
+			</ul>
+		</div>
+		<!-- trucks -->
+		<div class="col s10  dash-board-9" >
+			<div class="row container">
+			<h2>Add Driver</h2>
+				<form class="col s12" ng-submit="submitOrder()">
+			      <div class="row">
+			        <div class="input-field col s12">
+			          <input id="first_name" type="text" class="validate" placeholder="Name" name="name" ng-model="name" required>
+			        </div>
+			        <!-- <div class="input-field col s12">
+			          <input id="contact" type="text" class="validate" placeholder="Contact Number">
+			        </div> -->
+			      </div>
+			      <div class="row">
+			        <div class="input-field col s12">
+			          <input id="password" type="password" class="validate" placeholder="Password" name="password" ng-model="password" required>
+			        </div>
+			      </div>      
+			    </form>
+			    <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="submitOrder()">Submit
+				    <i class="material-icons right">send</i>
+				</button>
+				{{subOrd}}
+		    </div>
+		</div>
+	</div>
+	
+</div>
+
+
+<!-- dashboard ends -->
+{% include 'javascript.html' %}

@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+
+{% block head_title %}Arbuda | {{ block.super }}{% endblock %}
+
+<style>{% block style %}{% endblock %}</style>
+
+
+
+{% block jumbotron %}
+
+<div class="jumbotron">
+		<div class="banner-content">
+				<span id="name">Arbuda<br> Transport<br> Agency</span><br><br>				
+				<div class="play">  
+				<a href="google.com"><img src="{% static 'img/play.png' %}" style="width:180px;height:50px"></a></div>
+		</div>		
+ </div>
+{% endblock %}
+
+{% block maincontent %}
+<div class="about-section ">
+	<div class="container">
+		<div class="headline">
+			<span>About Us</span>
+		</div>
+		<div class="row">
+			<div class="col s12">
+				<p> Founded in 1986, Arbuda Transport Agency has become one of the Aravalli’s leading Logistic Service Providers. Based on Bayad (Aravalli) Arbuda Transport Agency provides best dependables outsourced logistics solution.We provides full-service contract logistic services including transportation and other integrate services. We can partner with your company to increase your efficiency and drive down your transportation costs.Experience. Capacity. Flexibility. Arbuda Transport Agency provides everything your business needs to gain a competitive edge in today’s rapidly changing transportation environment.</p>
+			</div>
+		</div>
+		<div class="row about-section-img">
+			<div class="col s4">
+				<img src="{% static 'img/track.png' %}"><br>
+				<span>Track</span>
+			</div>
+			<div class="col s4">
+				<img src="{% static 'img/reliable.png' %}"><br>
+				<span>Reliable</span>
+			</div>
+			<div class="col s4">
+				<img src="{% static 'img/secure.png' %}"><br>
+				<span>Secure</span>
+			</div>
+		</div>
+	</div>
+		
+</div>
+<div class="hto-section ">
+		<div class="row container">
+			<div class="col s12 headline">
+				<span>How it works </span>
+			</div>
+			<div class="row">
+		        <div class="col s12 m4 l4">
+		          <div class="card ">
+		            <div class="card-content">
+		              <span class="card-title"><img src="{% static 'img/i/main.png' %}"></span>
+		              <br><p>Download our mobile app from Google Play store</p>
+		            </div>
+		            <div class="card-action">
+		              <p>Download it from <a href="">here</a></p>
+		            </div>
+		          </div>
+		        </div>
+		        <div class="col s12 m4 l4">
+		          <div class="card ">
+		            <div class="card-content ">
+		              <span class="card-title"><img src="{% static 'img/i/order.png' %}"></span>
+		              <br><p>Place order by filling order form </p><br>
+		            </div>
+		            <div class="card-action">
+		              <p>For queries check <a href="">this</a></p>
+		            </div>
+		          </div>
+		        </div>
+		        <div class="col s12 m4 l4">
+		          <div class="card ">
+		            <div class="card-content">
+		              <span class="card-title"><img src="{% static 'img/i/track.png' %}"></span>
+		              <br><p>Track your orders on mobile app width OrderID given after order confirmation</p>
+		            </div>
+		            <div class="card-action">
+		              <p>Download it from <a href="">here</a></p>
+		            </div>
+		          </div>
+		        </div>
+	      </div>
+		</div> 
+</div>
+<div class="customers-section">
+	<div class="container">
+		<div class="customers-section-content">
+			<div class="headline">
+				<span>Our Customers</span>
+			</div><br><br>
+			<div class="row">
+				<div class="col s3">
+					<img src="{% static 'img/logo-1.png' %}">
+				</div>
+				<div class="col s3">
+					<img src="{% static 'img/logo-1.png' %}">
+				</div>
+				<div class="col s3">
+					<img src="{% static 'img/logo-1.png' %}">
+				</div>
+				<div class="col s3">
+					<img src="{% static 'img/logo-1.png' %}">
+				</div>
+			</div>
+		</div>
+	</div>
+		
+</div>
+{% endblock %}
+{% include 'footer.html' %}
