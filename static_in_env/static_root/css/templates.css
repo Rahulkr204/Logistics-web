@@ -1,4 +1,5 @@
 
+
 .brand-logo img{
 	width: 100%;
 }
@@ -25,7 +26,7 @@
 .card .card-content{
 	margin: 0;
 	padding: 10px 5px;
-	font-size: 1.2em
+	font-size: 1em
 }
 .card .card-action{
 	margin-right: 10px;
@@ -57,4 +58,7 @@
 }
 .card-bottom{
 	float: right;
+}
+.active{
+	background-color: #888888;
 }

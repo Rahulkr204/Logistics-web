@@ -47,11 +47,13 @@ INSTALLED_APPS = [
     'registration',
     #my apps
     'newsletter',
+    'corsheaders',
 ]
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -127,6 +129,40 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
+CORS_ORIGIN_ALLOW_ALL = False
+
+CORS_ORIGIN_WHITELIST = ()
+
+CORS_ORIGIN_REGEX_WHITELIST = ()
+
+CORS_URLS_REGEX = '^.*$'
+
+CORS_ALLOW_METHODS = (
+        'GET',
+        'POST',
+        'PUT',
+        'PATCH',
+        'DELETE',
+        'OPTIONS'
+    )
+
+CORS_ALLOW_HEADERS = (
+        'x-requested-with',
+        'content-type',
+        'accept',
+        'origin',
+        'authorization',
+        'x-csrftoken'
+    )
+
+
+CORS_EXPOSE_HEADERS = ()
+
+CORS_PREFLIGHT_MAX_AGE = 86400
+
+CORS_ALLOW_CREDENTIALS = False
+
+CORS_REPLACE_HTTPS_REFERER = False
 
 STATIC_URL = '/static/'
 

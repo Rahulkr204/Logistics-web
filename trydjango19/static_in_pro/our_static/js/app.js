@@ -17,4 +17,7 @@ myapp.controller('orderCtrl', ['$scope', '$http', '$rootScope',function($scope, 
   });
 
 }]);
- myapp.
+
+$( document ).ready(function(){
+    $(".button-collapse").sideNav();
+});

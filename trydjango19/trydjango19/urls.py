@@ -22,8 +22,8 @@ from django.contrib import admin
 urlpatterns = [
 
     url(r'^$', 'newsletter.views.home', name='home'),
-    url(r'^contact/$', 'newsletter.views.contact', name='contact'),
-    url(r'^about/$', 'trydjango19.views.about', name='about'),
+    # url(r'^contact/$', 'newsletter.views.contact', name='contact'),
+    # url(r'^about/$', 'trydjango19.views.about', name='about'),
     url(r'^dashboard/$', 'trydjango19.views.dashboard', name='dashboard'),
     url(r'^orders/$', 'trydjango19.views.orders', name='orders'),
     url(r'^drivers/$', 'trydjango19.views.drivers', name='drivers'),

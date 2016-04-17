@@ -12,12 +12,11 @@
 						<img src={% static 'img/logo.png' %} style="margin-top: 50px;margin-left:10px;width: 180px">
 						<h5 class="white-text" style="margin-left: 60px">Arbuda</h5>
 					</div>
-				</li>
-
+				</li> 
 			      	{% if request.user.is_authenticated %}
 			      		<li><a href="{% url 'home' %}">Home</a></li>
 			      		<!-- <li class="active"><a href="{% url 'dashboard' %}">Dashboard</a></li> -->
-		              <li><a href="{% url 'home' %}">Logout</a></li>
+		              	<li><a href="{% url 'auth_logout' %}">Logout</a></li>
 		              {% else  %}
 		              <li><a href="{% url 'auth_login' %}">Login</a></li>
 		            {% endif %}
@@ -37,7 +36,7 @@
 		        </div>
 		        <div class="col s6 sort">
 		        	<span>Filter By :</span>
-							<span><a class="waves-effect waves-teal btn" ng-click="myFilter = {order_status:'delivered,pending,intransit' }" >All</a></span>
+							<span><a class="waves-effect waves-teal btn" ng-click="myFilter = {order_status:'*' }" >All</a></span>
 		        	<span><a class="waves-effect waves-teal btn" ng-click="myFilter = {order_status: 'delivered'}" >Completed</a></span>
 		        	<span><a class="waves-effect waves-teal btn" ng-click="myFilter = {order_status: 'pending'}">Pending</a></span>
 		        	<span><a class="waves-effect waves-teal btn" ng-click="myFilter = {order_status: 'intransit'}">In transit</a></span>
@@ -46,7 +45,7 @@
 			<!-- orders card -->
 			<div class="row">
 				<ul>
-					<li ng-repeat="order in orders | filter:query | filter:myFilter">
+					<li ng-repeat="order in orders | filter:query | filter:myFilter | orderBy:'':true">
 					<!-- single order -->
 			        <div class="col s12 card-1">
 			          <div class="card">

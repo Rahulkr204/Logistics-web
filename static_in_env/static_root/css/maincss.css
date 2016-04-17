@@ -158,3 +158,9 @@ h1 span{
 .active{
 	background-color: #CFCFCF
 }
+footer.page-footer{
+	    /*bottom: 0;*/
+    position: absolute;
+    width: 100%;
+    height:;
+}
